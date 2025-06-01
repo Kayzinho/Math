@@ -5,6 +5,7 @@ from calculo import calcular_totais
 # Configurações globais
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("green")
+produtos, semanas = 3, 2
 
 # Janela principal
 janela = ctk.CTk()
@@ -24,19 +25,19 @@ titulo = ctk.CTkLabel(janela, text="Vendas Semanais", font=("Segoe UI", 18, "bol
 titulo.place(relx=0.5, y=20, anchor="n")
 
 # Cabeçalhos
-for j in range(3):
+for j in range(produtos):
     label = ctk.CTkLabel(janela, text=f"Produto {j + 1}", font=("Segoe UI", 12, "bold"), text_color="green", bg_color="transparent")
     label.place(x=170 + j * 100, y=60)
 
 entradas = []
 
 # Entradas por semana
-for i in range(2):
+for i in range(semanas):
     semana_label = ctk.CTkLabel(janela, text=f"Semana {i + 1}", font=("Segoe UI", 12), text_color="green", bg_color="transparent")
     semana_label.place(x=70, y=100 + i * 60)
 
     linha = []
-    for j in range(3):
+    for j in range(produtos):
         entrada = ctk.CTkEntry(
             janela,
             width=80,
